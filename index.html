@@ -82,14 +82,8 @@
                 margin-bottom: 4%;
             }
             
-            #menuButtons form {
+            .menuButtons form {
                 display: inline;
-            }
-            
-            #menuButtons button {
-                background-color: rgb(147, 207, 253);
-                font-size: small;
-                
             }
 
             #closeB {
@@ -131,6 +125,11 @@
                 margin: 8px 0;
                 box-sizing: border-box;
             }
+            #ilLabField {
+                height: auto;
+                overflow-x: hidden;
+                transition: 1s;
+            }
 
             h1 {
                 color: blue;
@@ -143,6 +142,7 @@
 
             input {
                 width: auto;
+                border-radius: 20px;
             }
 
             p {
@@ -160,6 +160,11 @@
                 padding-bottom: 5%;
                 
             }
+            .menuButtons button {
+                background-color: rgb(147, 207, 253);
+                font-size: small;
+                
+            }
 
               /* Desktop: */
             @media only screen and (min-width: 1000px) {
@@ -175,10 +180,9 @@
                     width: 29.5%;
                     margin: auto;
                 }
-                #menuButtons button {
+                .menuButtons button {
                 background-color: rgb(147, 207, 253);
                 font-size: x-small;
-                
             }
             }
         </style>
@@ -778,18 +782,21 @@
             <br><br>
             <!-- Input fields -->
             <div class="labField" id="ilLabField">
+                <div class="menuButtons" id="menuButtonsIL">
+                    <form action="https://checkcoverage.apple.com/il/en/;jsessionid=node01n538bt1i5yfjems5nv5ie84r9969027.node0" method="get" target="_blank">
+                        <button type="submit">אחריות יצרן</button>
+                    </form>
+                </div>
                 <input type="text" inputmode="numeric"  id="ilCostInput" placeholder="עלות מעבדה">
                 <button id="ilCalacB">חשב</button>
             </div>
             <div class="labField" id="usLabField">
-                <div id="menuButtons">
-                    
-                    <button id="repairCostTable">מחירון</button>
+                <div class="menuButtons" id="menuButtonsUS">
                     <form action="https://mybusinessservice.surface.com/en-US/CheckWarranty/CheckWarranty" method="get" target="_blank">
                         <button type="submit">אחריות יצרן</button>
                     </form>
+                    <button id="repairCostTable">מחירון</button>
                     <button id="exchangeRateMenuB">שער הדולר</button>
-                    
                 </div>
                 <br>
                 <input type="text" inputmode="numeric" id="usCostInput" placeholder="עלות מעבדת ארה''ב">
@@ -814,10 +821,13 @@
         function openilLabField(){
             if (iF.style.display === "none"){
                 iF.style.display = "block";
+                iF.style.height = "100%";
                 uF.style.display = "none";
                 document.getElementById("answer").innerHTML = "";
             } else {
                 iF.style.display = "none";
+                iF.style.height = "0%";
+
                 document.getElementById("answer").innerHTML = "";
             }    
         }
