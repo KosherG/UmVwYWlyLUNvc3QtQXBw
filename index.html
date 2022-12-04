@@ -892,6 +892,26 @@
         cCT.addEventListener("click", closeRepairCostTable);
 
         
+        // 'Enter' key press
+
+        // const iCB = document.getElementById("ilCalacB"
+        //const uCB = document.getElementById("usCalacB"
+
+        iCInput = document.getElementById("ilCostInput");
+        uCInput = document.getElementById("usCostInput");
+
+        iCInput.addEventListener("keyup", function(e){
+          if (e.code === "Enter" || e.code === "NumpadEnter") {
+            iCB.click();
+          }
+        })
+
+        uCInput.addEventListener("keyup", function(e){
+          if (e.code === "Enter" || e.code === "NumpadEnter") {
+            uCB.click();
+          }
+        })
+
     </script>
     <footer>
         <p>מחשבון עלות תיקון במעבדה</p>
