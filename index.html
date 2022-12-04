@@ -821,6 +821,9 @@
         const rCT = document.getElementById("repairCostTable");
         const cCT = document.getElementById("closeRepairCostTable");
         const cERM = document.getElementById("closeB");
+        const iCInput = document.getElementById("ilCostInput");
+        const uCInput = document.getElementById("usCostInput");
+
 
         // Function Declaration.
         function openilLabField(){
@@ -893,13 +896,6 @@
 
         
         // 'Enter' key press
-
-        // const iCB = document.getElementById("ilCalacB"
-        //const uCB = document.getElementById("usCalacB"
-
-        iCInput = document.getElementById("ilCostInput");
-        uCInput = document.getElementById("usCostInput");
-
         iCInput.addEventListener("keyup", function(e){
           if (e.code === "Enter" || e.code === "NumpadEnter") {
             iCB.click();
